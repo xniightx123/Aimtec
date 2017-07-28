@@ -33,7 +33,6 @@ namespace BlackFeeder
             {
                 EnableFeed();
                 FeedingChecks();
-                Console.WriteLine(_globalRnd);
             }
         }
 
