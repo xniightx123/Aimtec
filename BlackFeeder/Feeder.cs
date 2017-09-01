@@ -112,7 +112,7 @@ namespace BlackFeeder
                             .FirstOrDefault();
                     if (enemy != null)
                     {
-                        var nearestChamp = enemy.Position;
+                        var nearestChamp = ally.Position;
 
                         _player.IssueOrder(OrderType.MoveTo, nearestChamp);
                     }
