@@ -107,12 +107,12 @@ namespace BlackFeeder
                 {
                     var enemy =
                         ObjectManager.Get<Obj_AI_Hero>()
-                            .Where(x => x.IsValidTarget() && !x.IsDead)
+                            .Where(x => x.allyIsValidTarget() && !x.IsDead)
                             .OrderBy(y => y.Distance(_player.Position))
                             .FirstOrDefault();
                     if (enemy != null)
                     {
-                        var nearestChamp = ally.Position;
+                        var nearestChamp = enemy.Position;
 
                         _player.IssueOrder(OrderType.MoveTo, nearestChamp);
                     }
@@ -270,7 +270,7 @@ namespace BlackFeeder
                         {
                             var enemy =
                                 ObjectManager.Get<Obj_AI_Hero>()
-                                    .Where(x => x.IsValidTarget() && !x.IsDead)
+                                    .Where(x => x.allyIsValidTarget() && !x.IsDead)
                                     .OrderBy(y => y.Distance(_player.Position))
                                     .FirstOrDefault();
                             if (enemy != null)
@@ -453,7 +453,7 @@ namespace BlackFeeder
                 {
                     var enemy =
                         ObjectManager.Get<Obj_AI_Hero>()
-                            .Where(x => x.IsValidTarget() && !x.IsDead)
+                            .Where(x => x.allyIsValidTarget() && !x.IsDead)
                             .OrderBy(y => y.Distance(_player.Position))
                             .FirstOrDefault();
                     if (enemy != null)
