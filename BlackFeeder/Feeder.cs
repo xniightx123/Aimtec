@@ -270,7 +270,7 @@ namespace BlackFeeder
                         {
                             var enemy =
                                 ObjectManager.Get<Obj_AI_Hero>()
-                                    .Where(x => !x.allyIsValidTarget() && !x.IsDead)
+                                    .Where(x => !x.IsValidTarget() && !x.IsDead)
                                     .OrderBy(y => y.Distance(_player.Position))
                                     .FirstOrDefault();
                             if (enemy != null)
@@ -453,7 +453,7 @@ namespace BlackFeeder
                 {
                     var enemy =
                         ObjectManager.Get<Obj_AI_Hero>()
-                            .Where(x => !x.allyIsValidTarget() && !x.IsDead)
+                            .Where(x => !x.IsValidTarget() && !x.IsDead)
                             .OrderBy(y => y.Distance(_player.Position))
                             .FirstOrDefault();
                     if (enemy != null)
